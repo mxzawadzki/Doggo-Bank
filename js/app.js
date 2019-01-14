@@ -8,6 +8,19 @@ document.getElementById('loan-form').addEventListener('submit', function(e) {
   e.preventDefault();
 });
 
+function addErrorEvent() {
+  formInputs = document.querySelectorAll('.form__input');
+  Array.from(formInputs).forEach(input => {
+    input.addEventListener('click', clearError);
+  });
+}
+
+function removeErrorEvent() {
+  Array.from(formInputs).forEach(input => {
+    input.removeEventListener('click', clearError);
+  });
+}
+
 function caluclateResults() {
   const amount = document.getElementById('amount');
         interest = document.getElementById('interest'),
@@ -29,21 +42,18 @@ function caluclateResults() {
     document.querySelector('.results').style.display = 'block';
     document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
     document.getElementById('doggo-chat').textContent = `Done! ${fingorCalculate(10)} + ${fingorCalculate(10)} = 🍪`;
-    setTimeout(happyFingor, 3000);
+    removeErrorEvent();
+    setTimeout(happyFingor, 2000);
   } else {
     showError('💡 Please enter valid numbers!');
   }
 }
 
 function showError(error) {
-  const formInputs = document.querySelectorAll('.form__input');
   document.querySelector('.results').style.display = 'none';
   document.getElementById('doggo-chat').textContent = error;
   document.getElementById('doggo-smile').src = 'img/Fingor-Tongue.png';
-
-  Array.from(formInputs).forEach(input => {
-    input.addEventListener('click', clearError);
-  });
+  addErrorEvent();
 }
 
 function clearError() {
@@ -71,7 +81,7 @@ function happyFingor() {
 function giveTreat() {
   document.getElementById('doggo-chat').textContent = `${fingorThanks()}`;
   document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
-  setTimeout(happyFingor, 3000);
+  addErrorEvent();
 }
 
 function fingorThanks() {
