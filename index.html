@@ -4,76 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="doggo-icon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Amita|Muli" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  
-  <title>Loan calculator</title>
+  <script src="js/app.js" defer></script>
+  <title>Doggo Bank</title>
 </head>
-<body class="bg-dark">
+<body class="page">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="card card-body text-center mt-5">
-          <h1 class="heading display-5 pb-3">Loan calculator</h1>
-          <form id="loan-form">
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-text">$</span>
-                <input type="number" class="form-control" id="amount" placeholder="Loan amount">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-text">%</span>
-                <input type="number" class="form-control" id="interest" placeholder="Interest">
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="number" class="form-control" id="years" placeholder="Years To Repay">
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Calculate" class="btn btn-dark btn-block">
-            </div>
-          </form>
-          <!-- Loader -->
-          <div class="loading">
-            <img src="img/loading.gif" alt="">
-          </div> 
-          <!-- Results -->
-          <div id="results" class="results">
-            <h5>Results</h5>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-text">Monthly Payment</span>
-                <input type="number" class="form-control" id="monthly-payment" disabled>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-text">Total Payment</span>
-                <input type="number" class="form-control" id="total-payment" disabled>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-text">Total Interest</span>
-                <input type="number" class="form-control" id="total-interest" disabled>
-              </div>
-            </div>
-          </div>
-        </div>
+    <header class="header">
+      <h1 class="header__title">Doggo Bank</h1>
+      <p class="header__subtitle">I'm a good boy!</p>
+    </header>
+    <div class="doggo">
+      <div class="doggo__chat">
+        <p class="doggo__text" id="doggo-chat">Hello, I'm Fingor! Welcome to my loan department! ❤️</p>
+      </div>
+      <div class="doggo__image-container">
+        <img class="doggo__image" id="doggo-smile" src="img/Fingor-Smile-Open.png" alt="">
       </div>
     </div>
+    <div class="form-container">
+      <form class="form" id="loan-form">
+        <div class="form__group">
+          <div class="form__input-group">
+            <label class="form__label" for="amount">Loan amount</label>
+            <input class="form__input" type="number" class="form__input" id="amount" name="amount" placeholder="Amount">
+          </div>
+          <div class="form__input-group">
+            <label class="form__label" for="interest">Interest %</label>
+            <input type="number" class="form__input" id="interest" name="interest" placeholder="Percent">
+          </div>
+          <div class="form__input-group">
+            <label class="form__label" for="years">Years to repay</label>
+            <input type="number" class="form__input" id="years" name="years" placeholder="Number of years">
+          </div>
+        </div>
+          <input type="submit" class="form__btn" value="Calculate">
+          <button type="button" class="form__btn" id="treat">Give a treat</button>
+      </form>
+    </div>
+    <div id="results" class="results">
+      <h3 class="results__title">Results</h5>
+        <div class="results__group">
+          <div class="results__input-group">
+            <p class="results__text">Monthly Payment</p>
+            <input type="number" class="results__input" id="monthly-payment" disabled>
+          </div>
+          <div class="results__input-group">
+            <p class="results__text">Total Payment</p>
+            <input type="number" class="results__input" id="total-payment" disabled>
+          </div>
+          <div class="results__input-group">
+            <p class="results__text">Total Interest</p>
+            <input type="number" class="results__input" id="total-interest" disabled>
+          </div>
+        </div>
+    </div>
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous">
-  </script>
-  <script src="js/app.js"></script>
 </body>
 </html>
