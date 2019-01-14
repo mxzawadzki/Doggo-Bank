@@ -1,1 +1,1 @@
-# Loan-Calculator
+# Doggo Bank
