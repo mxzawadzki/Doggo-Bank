@@ -71,6 +71,7 @@ function happyFingor() {
 function giveTreat() {
   document.getElementById('doggo-chat').textContent = `${fingorThanks()}`;
   document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
+  setTimeout(happyFingor, 3000);
 }
 
 function fingorThanks() {
