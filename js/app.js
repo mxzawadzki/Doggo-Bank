@@ -2,7 +2,7 @@ document.getElementById('amount').addEventListener('change', fingorImpressed);
 document.getElementById('treat').addEventListener('click', giveTreat);
 document.getElementById('loan-form').addEventListener('submit', function(e) {
   document.querySelector('.results').style.display = 'none';
-  document.getElementById('doggo-smile').src = '/img/Fingor-Smile-Closed.png';
+  document.getElementById('doggo-smile').src = 'img/Fingor-Smile-Closed.png';
   document.getElementById('doggo-chat').textContent = 'I\'m calculating...';
   setTimeout(caluclateResults, 1000);
   e.preventDefault();
@@ -27,7 +27,7 @@ function caluclateResults() {
     totalPayment.value = (monthly * caluclatedPayments).toFixed(2);
     totalInterest.value = ((monthly * caluclatedPayments) - principal).toFixed(2);
     document.querySelector('.results').style.display = 'block';
-    document.getElementById('doggo-smile').src = '/img/Fingor-Smile.png';
+    document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
     document.getElementById('doggo-chat').textContent = `Done! ${fingorCalculate(10)} + ${fingorCalculate(10)} = 🍪`;
     setTimeout(happyFingor, 3000);
   } else {
@@ -39,7 +39,7 @@ function showError(error) {
   const formInputs = document.querySelectorAll('.form__input');
   document.querySelector('.results').style.display = 'none';
   document.getElementById('doggo-chat').textContent = error;
-  document.getElementById('doggo-smile').src = '/img/Fingor-Tongue.png';
+  document.getElementById('doggo-smile').src = 'img/Fingor-Tongue.png';
 
   Array.from(formInputs).forEach(input => {
     input.addEventListener('click', clearError);
@@ -48,7 +48,7 @@ function showError(error) {
 
 function clearError() {
   document.getElementById('doggo-chat').textContent = 'Hello, I\'m Fingor! Welcome to my loan department! ❤️';
-  document.getElementById('doggo-smile').src = '/img/Fingor-Smile-Open.png';
+  document.getElementById('doggo-smile').src = 'img/Fingor-Smile-Open.png';
 }
 
 function fingorCalculate(num) {
@@ -59,18 +59,18 @@ function fingorImpressed() {
   const highAmount = document.getElementById('amount').value;
   if (highAmount >= 2000) {
     document.getElementById('doggo-chat').textContent = 'Wow, you must be rich!';
-    document.getElementById('doggo-smile').src = '/img/Fingor-Smile.png';
+    document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
   }
 }
 
 function happyFingor() {
   document.getElementById('doggo-chat').textContent = 'Am I a good boy? ❤️';
-  document.getElementById('doggo-smile').src = '/img/Fingor-Smile-Open.png';
+  document.getElementById('doggo-smile').src = 'img/Fingor-Smile-Open.png';
 }
 
 function giveTreat() {
   document.getElementById('doggo-chat').textContent = `${fingorThanks()}`;
-  document.getElementById('doggo-smile').src = '/img/Fingor-Smile.png';
+  document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
 }
 
 function fingorThanks() {
