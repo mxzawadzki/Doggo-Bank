@@ -68,6 +68,7 @@ function fingorCalculate(num) {
 function fingorImpressed() {
   const highAmount = document.getElementById('amount').value;
   if (highAmount >= 2000) {
+    removeErrorEvent();
     document.getElementById('doggo-chat').textContent = 'Wow, you must be rich!';
     document.getElementById('doggo-smile').src = 'img/Fingor-Smile.png';
   }
